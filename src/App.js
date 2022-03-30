@@ -7,6 +7,7 @@ import './App.css';
 
 import { Link, Route, Switch } from 'react-router-dom';
 
+import External from './component/External.js'
 
 
 function App() {
@@ -21,9 +22,9 @@ function App() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+        <Nav.Link><Link to="/">메인</Link></Nav.Link>
+        <Nav.Link><Link to="detail">진행 투표 현황</Link></Nav.Link>
+        <NavDropdown title="더보기" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
@@ -40,7 +41,7 @@ function App() {
 
 <Route exact path="/">
   <div>메인페이지</div>
-
+  <External/>
   <div className = "background"> 
   </div>
 
@@ -73,6 +74,8 @@ function App() {
     </div>
   );
 }
+
+
 
 
 
