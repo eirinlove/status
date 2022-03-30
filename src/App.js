@@ -1,8 +1,17 @@
+/* eslint-disable */
 import logo from './logo.svg';
+import React, {useState} from 'react';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import {name, cName, dataV} from './data.js';
 import './App.css';
 
+
+
+
 function App() {
+
+  let [image, imageChanger] = useState(dataV);
+
   return (
     <div className="App">
 <Navbar bg="light" expand="lg">
@@ -32,15 +41,30 @@ function App() {
 <div className="container">
   <div className="row">
 
-    <div className="col-md-4">a</div>
-    <img src ="hanzo.jpg"></img>
-    <div className="col-md-4">b</div>
-    <div className="col-md-4">c</div>
+    
+    <Example image={image}/>
+    <Example image={image}/>
+    <Example image={image}/>
   </div>
 </div>
 
     </div>
   );
 }
+
+
+
+function Example(props){
+
+  return (
+
+
+<div className="col-md-4">{props.image[0].src}
+    
+    </div>
+  )
+}
+
+
 
 export default App;
