@@ -5,6 +5,7 @@ import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import {name, cName, dataV} from './data.js';
 import './App.css';
 
+import { Link, Route, Switch } from 'react-router-dom';
 
 
 
@@ -34,11 +35,16 @@ function App() {
   </Container>
 </Navbar>
 
-<div className = "background"> 
 
-</div>
 
-<div className="container">
+
+<Route exact path="/">
+  <div>메인페이지</div>
+
+  <div className = "background"> 
+  </div>
+
+  <div className="container">
   <div className="row">
 
     { image.map((a, i)=> {return <Example image={image[i]} i={i+1} /> // a는 데이터 자체, i는 데이터의 번째 수.
@@ -50,6 +56,19 @@ function App() {
   <Example image={image[2]}/> */}
   </div>
 </div>
+</Route>
+
+
+
+<Route path="/detail">
+<div> 다른 페이지</div>
+</Route>
+
+
+
+
+
+
 
     </div>
   );
