@@ -41,10 +41,13 @@ function App() {
 <div className="container">
   <div className="row">
 
-    
-    <Example image={image}/>
-    <Example image={image}/>
-    <Example image={image}/>
+    { image.map((a, i)=> {return <Example image={image[i]} i={i+1} /> // a는 데이터 자체, i는 데이터의 번째 수.
+    })
+    }
+
+  {/* <Example image={image[0]}/>
+  <Example image={image[1]}/>
+  <Example image={image[2]}/> */}
   </div>
 </div>
 
@@ -54,16 +57,21 @@ function App() {
 
 
 
+
+
 function Example(props){
 
   return (
 
 
-<div className="col-md-4">{props.image[0].src}
+<div className="col-md-4">{props.i}번째 이미지<img src={props.image.src} style={{ width: 100, height:200}} ></img> 
     
     </div>
   )
-}
+} 
+// 위에서 image[0].src 이 아닌 image.src 인 이유는, 
+//<Example image=[image[0]} 부분에서 이미 0번째, 1번째 배열을 image 변수로 정의했기 때문에.
+// 가져오겠음을 말했기에, 이것은 더이상 배열로써가 아닌 문자열 데이터로써 정의 되었기 때문.
 
 
 

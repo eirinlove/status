@@ -5,7 +5,22 @@ export {name, cName, dataV}  // export default뒤의 변수를 적으면, 다른
 let dataV  = [{
 
     id : 0,
-    src : "./hanzo.jpg"
+    src : "./images/hanzo.jpg"
 
-},]
+},
+
+{
+
+    id : 1,
+    src : "./images/rein.png"
+
+},
+
+{
+    id : 2,
+    src : "./images/mercy.jpg"
+
+
+}
+]
 
