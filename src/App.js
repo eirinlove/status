@@ -8,11 +8,13 @@ import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
 import External from './component/External.js'
-
+import Current from './component/Current.js'
+import VoteList from './component/VoteList.js'
 
 function App() {
 
   let [image, imageChanger] = useState(dataV);
+  let [first, second] = useState(0);
 
   return (
     <div className="App">
@@ -23,7 +25,7 @@ function App() {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link><Link to="/">메인</Link></Nav.Link>
-        <Nav.Link><Link to="detail">진행 투표 현황</Link></Nav.Link>
+        <Nav.Link><Link to="CurrentPage">진행 투표 현황</Link></Nav.Link>
         <NavDropdown title="더보기" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -38,7 +40,7 @@ function App() {
 
 
 
-
+<Switch>
 <Route exact path="/">
   <div>메인페이지</div>
   <External/>
@@ -61,14 +63,21 @@ function App() {
 
 
 
-<Route path="/detail">
-<div> 다른 페이지</div>
+<Route path="/CurrentPage">
+
+<Current first={first}/>
+
+</Route>
+
+<Route path="/votelist/:id"> {/*URL 파라미터, ejs처럼 아무 문자열이나 받아 id로 정의한다는 뜻 */}
+
+<VoteList image={image}/> {/* 본문에 있는 data.js를 참조한 image State를 VoteList로 넘겨 처리하게 함. */}
+
 </Route>
 
 
 
-
-
+</Switch>
 
 
     </div>
