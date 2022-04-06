@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import {name, cName, dataV} from './data.js';
 import './App.css';
+import axios from 'axios';
+
 
 import { Link, Route, Switch } from 'react-router-dom';
 
@@ -58,6 +60,11 @@ function App() {
   <Example image={image[1]}/>
   <Example image={image[2]}/> */}
   </div>
+  <button className ="btn btn-primary" onClick={()=>{
+    axios.get('parameter')
+    .then(()=>{console.log("성공!!")})
+    .catch(()=>{console.log("실패!!")}) //db 데이터, json 데이터등 받기
+  }}>dd</button>
 </div>
 </Route>
 
