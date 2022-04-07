@@ -61,8 +61,9 @@ function App() {
   <Example image={image[2]}/> */}
   </div>
   <button className ="btn btn-primary" onClick={()=>{
-    axios.get('parameter')
-    .then(()=>{console.log("성공!!")})
+    axios.get('https://codingapple1.github.io/shop/data2.json')
+    .then((result)=>{console.log("성공!!")
+              imageChanger([...image, ...result.data ])}) // 데이터 3개를 추가.
     .catch(()=>{console.log("실패!!")}) //db 데이터, json 데이터등 받기
   }}>dd</button>
 </div>
