@@ -1,6 +1,6 @@
 /* eslint-disable */
 import logo from './logo.svg';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import {name, cName, dataV} from './data.js';
 import './App.css';
@@ -13,10 +13,13 @@ import External from './component/External.js'
 import Current from './component/Current.js'
 import VoteList from './component/VoteList.js'
 
+let testContext = React.createContext();
+
 function App() {
 
   let [image, imageChanger] = useState(dataV);
   let [first, second] = useState(0);
+  var useData = 3;
 
   return (
     <div className="App">
@@ -66,6 +69,9 @@ function App() {
               imageChanger([...image, ...result.data ])}) // 데이터 3개를 추가.
     .catch(()=>{console.log("실패!!")}) //db 데이터, json 데이터등 받기
   }}>dd</button>
+<testContext.Provider value={useData}>
+<Plus></Plus>
+</testContext.Provider>
 </div>
 </Route>
 
@@ -114,4 +120,12 @@ function Example(props){
 
 
 
+function Plus(){
+
+  var useData = useContext(testContext);
+  return (
+
+    <div className = "foward">useContext{useData}</div>
+  )
+}
 export default App;
