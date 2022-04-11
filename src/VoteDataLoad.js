@@ -12,7 +12,7 @@ function VoteDataLoad(props){
                 <thread>
                     <tr>
                         <th>#</th>
-                        <th>{props.state[0]}</th>
+                        <th>{props.state[0].name}</th>
                     </tr>
                 </thread>
             </Table>
