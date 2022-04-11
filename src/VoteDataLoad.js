@@ -1,7 +1,8 @@
 import React from 'react';
 import {Table} from 'react-bootstrap'; // 중괄호, table, 중괄호 없음. 함수에서 리턴하는 것. 
+import { connect } from 'react-redux';
 
-function VoteDataLoad(){
+function VoteDataLoad(props){
 
     return (
 
@@ -11,7 +12,7 @@ function VoteDataLoad(){
                 <thread>
                     <tr>
                         <th>#</th>
-                        <th>hi</th>
+                        <th>{props.state[0]}</th>
                     </tr>
                 </thread>
             </Table>
@@ -20,4 +21,12 @@ function VoteDataLoad(){
     )
 }
 
-export default VoteDataLoad;
+function dataSource(state){
+
+    return{
+        state : state
+    }
+
+}
+
+export default connect(dataSource)(VoteDataLoad);

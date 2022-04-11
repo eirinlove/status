@@ -7,7 +7,9 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+let saveCon = createStore(()=>{return [{id : 0, name : '안녕하세요'}] }); 
 
 ReactDOM.render(
   <React.StrictMode>
