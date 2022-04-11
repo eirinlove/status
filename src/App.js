@@ -12,6 +12,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import External from './component/External.js'
 import Current from './component/Current.js'
 import VoteList from './component/VoteList.js'
+import VoteDataLoad from './VoteDataLoad.js'
 
 let testContext = React.createContext();
 
@@ -87,6 +88,10 @@ function App() {
 
 <VoteList image={image}/> {/* 본문에 있는 data.js를 참조한 image State를 VoteList로 넘겨 처리하게 함. */}
 
+</Route>
+
+<Route path="/VoteData">
+  <VoteDataLoad></VoteDataLoad>
 </Route>
 
 
