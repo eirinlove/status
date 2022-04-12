@@ -13,10 +13,20 @@ function VoteDataLoad(props){
                     <tr>
                         <th>#</th>
                         <th>{props.state[0].name}</th>
+                        <th>{props.state[0].quan}</th>
+                        <th><button onClick={()=>{props.dispatch({type : '수량증가'})}}>+</button></th>
+                        <th><button onClick={()=>{props.dispatch({type : '수량감소'})}}>-</button></th>
                     </tr>
                 </thread>
             </Table>
 
+        { props.alertTab === true
+            ? (<div className="my-alert2">
+            <p>ㅇㅇ</p> </div>) :null }
+
+
+            <button onClick = {()=>{props.dispatch({type : '닫기'})}}>닫기</button>
+        
         </div>
     )
 }
@@ -24,7 +34,8 @@ function VoteDataLoad(props){
 function dataSource(state){
 
     return{
-        state : state
+        state : state.quanModify,
+        alertTab : state.alertRemote //props 화됨
     }
 
 }
