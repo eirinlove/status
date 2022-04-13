@@ -53,6 +53,8 @@ function alertRemote(state = DState2, action){
   return state;
 }
 
+
+
 let store = createStore(combineReducers({quanModify, alertRemote}));
 
 ReactDOM.render(

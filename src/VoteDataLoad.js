@@ -26,7 +26,7 @@ function VoteDataLoad(props){
 
 
             <button onClick = {()=>{props.dispatch({type : '닫기'})}}>닫기</button>
-        
+            <button onClick = { () => {props.dispatch({type : '투표'})}}>투표</button>
         </div>
     )
 }
