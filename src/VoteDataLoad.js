@@ -40,4 +40,13 @@ function dataSource(state){
 
 }
 
+function exCom(){
+
+    if (true ) {
+        return <p> yes</p>
+    } else {
+        return null;
+    }
+}
+
 export default connect(dataSource)(VoteDataLoad);
